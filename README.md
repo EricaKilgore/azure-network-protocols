@@ -8,29 +8,21 @@
     Welcome to this tutorial on configuring Network Security Groups (NSGs) and inspecting network protocols within your Azure environment.</p>
 
   <p><b>Environments and Technologies used in this Demonstration:</b> <br>
-
     <ul> 
       <li>Microsoft Azure </li>
       <li> Remote Desktop Protocol</li>
       <li> Various Command-Line Tools</li>
       <li>Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP) </li>
       <li>Wireshark (Protocol Analyzer) </li>
-
     </ul>
-    
-    </p>
-    
-    <p><b>Operating Systems:</b> <br>
-    
-    <ul> 
+        </p>
+        <p><b>Operating Systems:</b> <br>
+        <ul> 
       <li> Windows 10</li>
       <li> Ubuntu Server 20.04</li>
-  
-    </ul>
-    
-      </p> 
+      </ul>
+          </p> 
       <hr style="border: 1px solid #ccc; width: 80%; margin: 20px auto;">
-
       <p>To begin, create two virtual machines (VMs) in Azure: one Linux-based and one running Windows 10. Both VMs should be assigned two CPUs and placed within the same virtual network (VNet) to ensure proper communication.
       </p>
       <p>
@@ -56,7 +48,6 @@
   <img src="https://i.imgur.com/GLxSIG3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
   </p>
   <p>
-
     In the next phase of the lab, we will initiate a continuous ping to the Linux machine using the ping -t command. This command will maintain an ongoing ping request until manually stopped. While the Windows machine is pinging the Linux machine, we will proceed to the Linux VM and configure the firewall to block inbound ICMP traffic.</p>
 <p>
     Upon implementing this firewall rule, the Windows machine will stop receiving echo replies from the Linux machine. To block ICMP traffic, we will create a new Network Security Group (NSG) on the Linux VM and configure it to deny ICMP traffic. Alternatively, ICMP traffic can be allowed again by adjusting the NSG settings on the Linux VM through the Azure portal.  
@@ -86,7 +77,6 @@
   <img src="https://i.imgur.com/zteR41r.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
   </p>
   <p>
-
     Next, we will configure Wireshark to filter for DHCP traffic. The Dynamic Host Configuration Protocol (DHCP) operates on ports 67 and 68 and is responsible for dynamically assigning IP addresses to devices on a network.
 </p>
 <p>
@@ -105,7 +95,6 @@
   <img src="https://i.imgur.com/VMcwmsO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
   </p>
   <p>
-
     Finally, we will configure Wireshark to filter for RDP (Remote Desktop Protocol) traffic. By applying the filter tcp port 3389, we will capture traffic on the default RDP port.
 </p>
 <p>
